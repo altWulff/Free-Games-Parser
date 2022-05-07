@@ -1,3 +1,8 @@
+"""
+On this file contains configuration variables
+"""
+
+
 LOCALE = 'ru'
 COUNTRY = 'UA'
 URL = f'''
