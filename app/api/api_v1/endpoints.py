@@ -1,3 +1,8 @@
+"""
+REST API
+v1
+"""
+
 from fastapi import APIRouter
 import requests
 from app.config import URL

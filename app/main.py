@@ -3,9 +3,9 @@ Main file to start
 """
 
 
+import uvicorn
 from fastapi import FastAPI
 from app.api.api_v1.endpoints import api_router
-import uvicorn
 
 
 app = FastAPI()
