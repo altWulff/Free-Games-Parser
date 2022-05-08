@@ -18,3 +18,13 @@ and displays on the page.
 `$ pip install -r requirements.txt`
 
 `$ uvicorn app.main:app --reload`
+
+### Setting up with Docker
+`$ docker build -t free_games_parser:latest .`
+
+`$ docker run -d --name free_games_parser -p 80:80 free_games_parser:latest`
+
+
+Index page`http://127.0.0.1`
+
+Docs `http://127.0.0.1/docs`
