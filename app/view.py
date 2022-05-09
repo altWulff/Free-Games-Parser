@@ -20,5 +20,11 @@ async def index(request: Request) -> templates.TemplateResponse:
     """
     api_request = await request_games()
     return templates.TemplateResponse(
-        "index.html", {"request": request, "data": api_request, "base_url": BASE_URL, 'locale': LOCALE}
+        "index.html",
+        {
+            "request": request,
+            "data": api_request,
+            "base_url": BASE_URL,
+            "locale": LOCALE,
+        },
     )

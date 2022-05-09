@@ -8,6 +8,7 @@ from fastapi import APIRouter
 
 from app.config import URL
 from app.schemas import GameCard
+
 api_router = APIRouter()
 
 
@@ -22,7 +23,7 @@ async def games() -> list[dict]:
     return data["data"]["Catalog"]["searchStore"]["elements"]
 
 
-@api_router.get('/{game_id}')
+@api_router.get("/{game_id}")
 async def game_by_id(game_id: int) -> GameCard:
     """
     Id game request
