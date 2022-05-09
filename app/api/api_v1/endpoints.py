@@ -12,7 +12,7 @@ api_router = APIRouter()
 
 
 @api_router.get("/")
-async def games():
+async def games() -> list[dict]:
     """
     Request json from epic store
     :return: json response
