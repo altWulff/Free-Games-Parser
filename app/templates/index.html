@@ -21,7 +21,7 @@
         </div>
         <p class="mt-2 text-slate-500">{{ game['description'] }}</p>
         <button class="px-4 py-1 text-sm text-indigo-600 font-semibold rounded-full border border-indigo-200 hover:text-white hover:bg-indigo-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2">
-            <a href="{{ base_url }}/{{ game['productSlug']|replace('/home', '') }}" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">В магазин</a>
+            <a href="{{ base_url }}/{{ game['catalogNs']['mappings'][0]['pageSlug'] }}" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">В магазин</a>
         </button>
         <script type = "text/JavaScript">
           setLocale("{{ locale }}");

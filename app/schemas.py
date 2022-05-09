@@ -9,6 +9,7 @@ class GameCard(BaseModel):
     """
     Schema to request json
     """
+
     id: str
     title: str
     namespace: str
