@@ -1,7 +1,14 @@
+"""
+Contains schemas to api
+"""
+
 from pydantic import BaseModel
 
 
 class GameCard(BaseModel):
+    """
+    Schema to request json
+    """
     id: str
     title: str
     namespace: str
