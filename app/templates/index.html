@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
 </head>
 <body>
 <br/>
@@ -11,12 +12,19 @@
   <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
     <div class="md:flex">
       <div class="md:shrink-0">
-        <img class="h-48 w-full object-cover md:h-full md:w-48" src={{game['keyImages'][0]['url']}} alt="Man looking at item at a store">
+        <img class="h-48 w-full object-cover md:h-full md:w-48" src="{{game['keyImages'][0]['url']}}" alt="Man looking at item at a store">
       </div>
       <div class="p-8">
-        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{ game['title'] }}</div>
+        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{ game['title'] }}
+        <div id="{{game['title']}}-date"></div>
+        </div>
         <a href="{{ base_url }}/{{ game['productSlug']|replace('/home', '') }}" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{{ base_url }}/{{ game['productSlug']|replace("/home", "") }}</a>
         <p class="mt-2 text-slate-500">{{ game['description'] }}</p>
+        <script type = "text/JavaScript">
+          var ed = "{{game['effectiveDate']}}";
+          var date = moment.utc(ed).format('LL');
+          document.getElementById("{{game['title']}}-date").innerHTML = date;
+          </script>
       </div>
     </div>
   </div>
