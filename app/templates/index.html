@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment-with-locales.min.js"></script>
+  <script src="./static/main.js"></script>
 </head>
 <body>
 <div class="bg-white dark:bg-black flex-auto p-6">
@@ -23,9 +24,8 @@
             <a href="{{ base_url }}/{{ game['productSlug']|replace('/home', '') }}" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">В магазин</a>
         </button>
         <script type = "text/JavaScript">
-          moment.locale("{{ locale }}");
-          var ed = "{{game['effectiveDate']}}";
-          var date = moment.utc(ed).format('LL');
+          setLocale("{{ locale }}");
+          var date = moment("{{game['effectiveDate']}}").format('LL');
           document.getElementById("{{game['title']}}-date").innerHTML = date;
         </script>
       </div>
