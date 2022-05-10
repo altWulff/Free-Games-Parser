@@ -22,13 +22,7 @@ def request_data() -> list[dict]:
     request = requests.get(URL)
     data = request.json()
     data = data["data"]["Catalog"]["searchStore"]["elements"]
-    filtered_data = []
-    for i in data:
-        current_date = date.today()
-        effective_date = date(*map(int, i["effectiveDate"].split("T")[0].split("-")))
-        is_correct_year = current_date.year == effective_date.year
-        if is_correct_year:
-            filtered_data.append(i)
+    filtered_data = list(filter(lambda x: x['promotions'], data))
     return filtered_data
 
 

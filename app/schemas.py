@@ -16,14 +16,14 @@ class GameCard(BaseModel):
     description: str
     effectiveDate: str
     offerType: str
-    expiryDate: None
+    expiryDate: str | None
     status: str
     isCodeRedemptionOnly: bool
     keyImages: list[dict]
     seller: dict
-    productSlug: str
+    productSlug: str | None
     urlSlug: str
-    url: None
+    url: str | None
     items: list[dict]
     customAttributes: list[dict]
     categories: list[dict]
@@ -31,4 +31,4 @@ class GameCard(BaseModel):
     catalogNs: dict
     offerMappings: list
     price: dict
-    promotions: None
+    promotions: dict | None
