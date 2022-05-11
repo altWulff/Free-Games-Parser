@@ -3,8 +3,6 @@ REST API
 v1
 """
 
-from datetime import date
-
 import requests
 from fastapi import APIRouter
 
@@ -22,7 +20,7 @@ def request_data() -> list[dict]:
     request = requests.get(URL)
     data = request.json()
     data = data["data"]["Catalog"]["searchStore"]["elements"]
-    filtered_data = list(filter(lambda x: x['promotions'], data))
+    filtered_data = list(filter(lambda x: x["promotions"], data))
     return filtered_data
 
 
