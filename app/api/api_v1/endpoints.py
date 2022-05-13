@@ -20,7 +20,11 @@ def request_data() -> list[dict]:
     request = requests.get(URL)
     data = request.json()
     data = data["data"]["Catalog"]["searchStore"]["elements"]
-    filtered_data = list(filter(lambda x: x["promotions"], data))
+
+    def is_correct_data(dict_data: dict) -> bool:
+        return dict_data["promotions"] and dict_data["catalogNs"]["mappings"]
+
+    filtered_data = list(filter(is_correct_data, data))
     return filtered_data
 
 
