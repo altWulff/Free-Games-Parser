@@ -1,4 +1,6 @@
 # Free Games Parser
+![Tests](https://github.com/altWulff/Free-Games-Parser/actions/workflows/python-tests.yml/badge.svg)
+![Pylint](https://github.com/altWulff/Free-Games-Parser/actions/workflows/pylint.yml/badge.svg)
 
 The project parses available free games
 in the Epic Game Store, produces json output,
