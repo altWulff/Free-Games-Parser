@@ -3,29 +3,12 @@ REST API
 v1
 """
 
-import requests
 from fastapi import APIRouter
 
-from app.config import URL
+from app.celery_worker import request_data
 from app.schemas import GameCard
 
 api_router = APIRouter()
-
-
-def request_data() -> list[dict]:
-    """
-    Request from epic store
-    :return: list[dict]
-    """
-    request = requests.get(URL)
-    data = request.json()
-    data = data["data"]["Catalog"]["searchStore"]["elements"]
-
-    def is_correct_data(dict_data: dict) -> bool:
-        return dict_data["promotions"] and dict_data["catalogNs"]["mappings"]
-
-    filtered_data = list(filter(is_correct_data, data))
-    return filtered_data
 
 
 @api_router.get("/")

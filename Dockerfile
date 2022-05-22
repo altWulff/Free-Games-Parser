@@ -13,6 +13,6 @@ COPY app app
 RUN chown -R free_games_parser:free_games_parser ./
 USER free_games_parser
 
-EXPOSE 5000
+EXPOSE 80
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]

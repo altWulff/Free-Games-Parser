@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  rabbitmq3:
+    container_name: "rabbitmq"
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "4369:4369"
+      - "5671:5671"
+      - "5672:5672"
+      - "15672:15672"
+
+  app:
+    build: .
+    ports:
+      - "80:80"
+    depends_on:
+      - rabbitmq3
+
+  celery:
+      restart: always
+      build:
+        context: .
+      command: celery -A app.celery_worker.celery worker --loglevel=info
+      volumes:
+        - .:/celery
+      depends_on:
+        - app
+        - rabbitmq3
