@@ -35,3 +35,6 @@ Docs `http://127.0.0.1:8000/docs`
 Index page `http://127.0.0.1`
 
 Docs `http://127.0.0.1/docs`
+
+#### Start with Docker-Compose
+`$ docker-compose build && docker-compose up`
