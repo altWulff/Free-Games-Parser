@@ -30,4 +30,4 @@ jobs:
 
     - name: Test with pytest
       run: |
-        pytest tests.py -v
+        pytest tests/ -v

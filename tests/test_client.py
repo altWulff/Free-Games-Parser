@@ -1,5 +1,5 @@
 """
-Base tests
+Tests client
 """
 
 
@@ -28,7 +28,7 @@ def test_api_response():
     assert len(response_data) > 0
 
 
-def test_api_response_data_len():
+def test_response_data_len():
     """
     Test response data
     assert length greater than one
@@ -38,7 +38,7 @@ def test_api_response_data_len():
     assert len(response_data) > 0
 
 
-def test_api_response_correct_schema():
+def test_response_correct_schema():
     """
     Test response data
     assert correct data in schema
