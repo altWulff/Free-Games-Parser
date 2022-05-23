@@ -24,7 +24,7 @@ def request_data() -> list[dict]:
     data = data["data"]["Catalog"]["searchStore"]["elements"]
 
     def is_correct_data(dict_data: dict) -> bool:
-        return dict_data["promotions"] and dict_data["catalogNs"]["mappings"]
+        return dict_data["promotions"]
 
     filtered_data = list(filter(is_correct_data, data))
     celery_log.info("Request from epic api complete")
